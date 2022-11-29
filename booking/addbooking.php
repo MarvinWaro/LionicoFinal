@@ -23,7 +23,7 @@
         $booking->firstname = htmlentities($_POST['fn']);
         $booking->lastname = htmlentities($_POST['ln']);
         $booking->email = htmlentities($_POST['email']);
-        $booking->academic_rank = $_POST['contact_number'];
+        $booking->contact_number = $_POST['contact_number'];
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
         if(isset($_POST['status'])){
