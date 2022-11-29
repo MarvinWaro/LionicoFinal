@@ -31,7 +31,7 @@ function validate_email($POST){
         $domain = array_pop($parts);
 
         // Check if the domain is WMSU
-        if (strcmp(strtolower($domain), 'wmsu.edu.ph') != 0)
+        if (strcmp(strtolower($domain), 'lionico.ph') != 0)
         {
             return false;
         }
@@ -50,15 +50,6 @@ function validate_rank($POST){
     return true;
 }
 
-function validate_barber($POST){
-    if(!isset($POST['barber'])){
-        return false;
-    }else if(strcmp($POST['barber'], 'None') == 0){
-        return false;
-    }
-    return true;
-}
-
 function validate_role($POST){
     if(!isset($POST['role'])){
         return false;
@@ -67,7 +58,7 @@ function validate_role($POST){
 }
 
 function validate_add_booking($POST){
-    if(!validate_first_name($POST) || !validate_last_name($POST) || !validate_email($POST) || !validate_barber($POST)){
+    if(!validate_first_name($POST) || !validate_last_name($POST) || !validate_email($POST)){
         return false;
      }
     return true;

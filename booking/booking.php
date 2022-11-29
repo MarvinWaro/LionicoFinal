@@ -40,7 +40,6 @@
                         <th>Email</th>
                         <th>Contact Number</th>
                         <th>Address</th>
-                        <th>Barber</th>
                         <th>Date</th>
                         <th>Status</th>
                         <?php
@@ -70,7 +69,6 @@
                             <td><?php echo $value['email'] ?></td>
                             <td><?php echo $value['contact_number'] ?></td>
                             <td><?php echo $value['address'] ?></td>
-                            <td><?php echo $value['barber'] ?></td>
                             <td><?php echo $value['date'] ?></td>
                             <td><?php echo $value['status'] ?></td>
                             <?php

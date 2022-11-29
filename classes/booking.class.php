@@ -2,15 +2,15 @@
 
 require_once 'database.php';
 
-class Faculty{
+class Booking{
     //attributes
 
     public $firstname;
     public $lastname;
     public $email;
-    public $academic_rank;
-    public $department;
-    public $admission_role = 'None';
+    public $contact_number;
+    public $address;
+    public $date;
     public $status = 'Inactive';
 
     protected $db;
@@ -22,16 +22,16 @@ class Faculty{
 
     //Methods
     function add(){
-        $sql = "INSERT INTO faculty (firstname, lastname, email, academic_rank, department, admission_role, status) VALUES 
-        (:firstname, :lastname, :email, :academic_rank, :department, :admission_role, :status);";
+        $sql = "INSERT INTO booking (firstname, lastname, email, contact_number, address, date, status) VALUES 
+        (:firstname, :lastname, :email, :contact_number, :address, :date, :status);";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':lastname', $this->lastname);
         $query->bindParam(':email', $this->email);
-        $query->bindParam(':academic_rank', $this->academic_rank);
-        $query->bindParam(':department', $this->department);
-        $query->bindParam(':admission_role', $this->admission_role);
+        $query->bindParam(':contact_number', $this->contact_number);
+        $query->bindParam(':address', $this->address);
+        $query->bindParam(':date', $this->date);
         $query->bindParam(':status', $this->status);
         
         if($query->execute()){
@@ -43,15 +43,15 @@ class Faculty{
     }
 
     function edit(){
-        $sql = "UPDATE faculty SET firstname=:firstname, lastname=:lastname, email=:email, academic_rank=:academic_rank, department=:department, admission_role=:admission_role, status=:status WHERE id = :id;";
+        $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, academic_rank=:academic_rank, department=:department, admission_role=:admission_role, status=:status WHERE id = :id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
         $query->bindParam(':lastname', $this->lastname);
         $query->bindParam(':email', $this->email);
-        $query->bindParam(':academic_rank', $this->academic_rank);
-        $query->bindParam(':department', $this->department);
-        $query->bindParam(':admission_role', $this->admission_role);
+        $query->bindParam(':contact_number', $this->contact_number);
+        $query->bindParam(':address', $this->address);
+        $query->bindParam(':date', $this->date);
         $query->bindParam(':status', $this->status);
         $query->bindParam(':id', $this->id);
 
@@ -64,7 +64,7 @@ class Faculty{
     }
 
     function fetch($record_id){
-        $sql = "SELECT * FROM faculty WHERE id = :id;";
+        $sql = "SELECT * FROM booking WHERE id = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
@@ -74,7 +74,7 @@ class Faculty{
     }
 
     function delete($record_id){
-        $sql = "DELETE FROM faculty WHERE id = :id;";
+        $sql = "DELETE FROM booking WHERE id = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
         if($query->execute()){
@@ -86,7 +86,7 @@ class Faculty{
     }
 
     function show(){
-        $sql = "SELECT * FROM faculty ORDER BY CONCAT('lastname',', ','firstname') ASC;";
+        $sql = "SELECT * FROM booking ORDER BY CONCAT('lastname',', ','firstname') ASC;";
         $query=$this->db->connect()->prepare($sql);
         if($query->execute()){
             $data = $query->fetchAll();
