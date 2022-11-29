@@ -43,7 +43,7 @@ class Booking{
     }
 
     function edit(){
-        $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, academic_rank=:academic_rank, department=:department, admission_role=:admission_role, status=:status WHERE id = :id;";
+        $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, date=:date, status=:status WHERE id = :id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
