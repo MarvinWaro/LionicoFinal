@@ -22,7 +22,7 @@ class Booking{
 
     //Methods
     function add(){
-        $sql = "INSERT INTO booking (firstname, lastname, email, contact_number, address, date, status) VALUES 
+        $sql = "INSERT INTO booking (firstname, lastname, email, contact_number, address, date, status) VALUES
         (:firstname, :lastname, :email, :contact_number, :address, :date, :status);";
 
         $query=$this->db->connect()->prepare($sql);

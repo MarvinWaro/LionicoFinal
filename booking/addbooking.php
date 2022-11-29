@@ -81,7 +81,7 @@
                     <?php
                         }
                     ?>
-                    <label for="contact_number">Contact Nuber</label>
+                    <label for="contact_number">Contact Number</label>
                     <input type="text" id="contact_number" name="contact_number" required placeholder="contact_number" value="<?php if(isset($_POST['contact_number'])) { echo $_POST['contact_number']; } ?>">
                     <br>
 

@@ -32,7 +32,7 @@ CREATE TABLE `booking` (
   `firstname` varchar(255) NOT NULL,
   `lastname` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `contact_number` int(15) DEFAULT NULL,
+  `contact_number` varchar(100) DEFAULT NULL,
   `address` varchar(100) NOT NULL,
   `date` date DEFAULT NULL,
   `status` varchar(100) NOT NULL,
