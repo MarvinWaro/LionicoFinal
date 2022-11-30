@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2022 at 02:52 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Nov 30, 2022 at 07:28 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `forecast`
+-- Database: `lionico`
 --
 
 -- --------------------------------------------------------
@@ -45,7 +45,34 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `firstname`, `lastname`, `email`, `contact_number`, `address`, `date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'gago', 'gaga', 'gaga@lionico.ph', 926133742, 'qwqw', '2022-11-30', 'Active', '2022-11-29 13:40:00', '2022-11-29 13:40:00');
+(1, 'gago', 'gaga', 'gaga@lionico.ph', '926133742', 'qwqw', '2022-11-30', 'Active', '2022-11-29 13:40:00', '2022-11-29 13:40:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mbarber`
+--
+
+CREATE TABLE `mbarber` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact_number` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `chair_assigned` varchar(100) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `mbarber`
+--
+
+INSERT INTO `mbarber` (`id`, `firstname`, `lastname`, `email`, `contact_number`, `address`, `chair_assigned`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'dfdf', 'sdsd', 'sdsd@lionico.ph', '09265554489', 'marineford', 'chair 2', 'Active Employee', '2022-11-30 18:17:25', '2022-11-30 18:17:25'),
+(2, 'dfdf', 'sdsd', 'sdsd@lionico.ph', '787878', 'punk hazard', '9', 'Active Employee', '2022-11-30 18:26:05', '2022-11-30 18:26:05');
 
 -- --------------------------------------------------------
 
@@ -87,6 +114,12 @@ ALTER TABLE `booking`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mbarber`
+--
+ALTER TABLE `mbarber`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `programs`
 --
 ALTER TABLE `programs`
@@ -101,6 +134,12 @@ ALTER TABLE `programs`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `mbarber`
+--
+ALTER TABLE `mbarber`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --

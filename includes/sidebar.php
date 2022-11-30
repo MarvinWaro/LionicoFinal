@@ -17,13 +17,13 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo $students; ?>">
-                <i class='bx bx-user'></i>
+        <a href="../mbarber/mbarber.php">
+                <i class='bx bx-book-reader'></i>
                 <span class="links-name">Manage Barber</span>
             </a>
         </li>
         <li>
-            <a href="../customer/customer.php" class="<?php echo $faculty; ?>">
+            <a href="#" class="<?php echo $faculty; ?>">
                 <i class='bx bx-group' ></i>
                 <span class="links-name">Manage Customer</span>
             </a>
