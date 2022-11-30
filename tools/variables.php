@@ -2,12 +2,10 @@
 
     $page_title = "";
     $dashboard = "";
-    $application = "";
-    $screening = "";
     $programs = "";
-    $students = "";
     $faculty = "";
     $settings = "";
     $booking = "";
+    $mbarber = "";
 
 ?>

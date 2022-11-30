@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-        <a href="../mbarber/mbarber.php">
+        <a href="../mbarber/mbarber.php" class="<?php echo $mbarber; ?>">
                 <i class='bx bx-book-reader'></i>
                 <span class="links-name">Manage Barber</span>
             </a>
