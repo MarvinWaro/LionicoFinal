@@ -23,12 +23,6 @@
             </a>
         </li>
         <li>
-            <a href="#" class="<?php echo $faculty; ?>">
-                <i class='bx bx-group' ></i>
-                <span class="links-name">Manage Customer</span>
-            </a>
-        </li>
-        <li>
             <a href="#" class="<?php echo $settings; ?>">
                 <i class='bx bx-cog'></i>
                 <span class="links-name">Settings</span>
