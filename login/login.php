@@ -15,7 +15,7 @@
         "user2" => array(
             "firstname" => 'Root',
             "lastname" => 'Root',
-            "type" => 'admin',
+            "type" => 'staff',
             "username" => 'root',
             "password" => 'root'
         ),
@@ -42,7 +42,7 @@
                 if($value['type'] == 'admin'){
                     header('location: ../admin/dashboard.php');
                 }else{
-                    header('location: ../faculty/faculty.php');
+                    header('location: ../customer/home.php');
                 }
             }
         }
