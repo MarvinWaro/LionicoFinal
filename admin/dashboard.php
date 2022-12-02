@@ -49,7 +49,7 @@
 
             <div class="box">
                 <div class="right-side">
-                    <div class="box-topic">Total Barber</div>
+                    <div class="box-topic">Total Calls</div>
                     <div class="number">5</div>
                     <div class="indicator">
                         
