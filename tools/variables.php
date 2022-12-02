@@ -7,5 +7,5 @@
     $settings = "";
     $booking = "";
     $mbarber = "";
-
+    $cbooking = "";
 ?>

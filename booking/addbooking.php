@@ -93,7 +93,7 @@
                     <input type="date" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
                     <br>
 
-                    <label for="status">Is Status of Employee Active?</label><br>
+                    <label for="status">Is Status of Customer Active?</label><br>
                     <label class="container" for="status">Yes
                         <input type="checkbox" name="status" id="status" value="Active Employee" <?php if(isset($_POST['status'])) { if ($_POST['status'] == 'Active Employee') echo ' checked'; } ?>>
                         <span class="checkbox"></span>

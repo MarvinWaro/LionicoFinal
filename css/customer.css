@@ -211,6 +211,9 @@ footer {
     background-color: #333;
     color: #fff;
     padding: 30px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
@@ -321,7 +324,7 @@ footer p {
     padding-top: 30px;
 }
 
-.add-form-container label {
+.add-form-customer-container label {
     color: white;
 }
 
@@ -331,4 +334,43 @@ footer p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.haircut {
+    font-size: 6.9rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(0, 80, 185);
+}
+
+.add-form-container {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.add-form-container .add-form {
+    margin: 0 auto;
+    line-height: 10px;
+}
+
+.table-container {
+    position: relative;
+    top: 20px;
+    padding: 40px;
+}
+
+input {
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
 }

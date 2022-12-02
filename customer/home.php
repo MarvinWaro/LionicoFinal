@@ -37,34 +37,34 @@
 </header>
 <main>
       <div class="homecontent">
-        <div class="container">  
-          <h1>Want a Haircut?</h1>
+        <div class="container"> 
+          <h1>Want a <span class="haircut">Haircut?</span></h1>
         </div>
       </div>
     </main>
 
     <section class="sections">
       <div class="container">
-        
+
         <div class="col">
           <img src="../img/686317.png">
-          <h2>See Services</h2>
-          <p>Take a look at our services</p>
-          <a href="../customer/services.html">Click here</a><br>
+          <h2>About</h2>
+          <p>About our Web</p>
+          <a href="../customer/about.php">Click here</a><br>
         </div>
         
         <div class="col">
           <img src="../img/3342176.png">
-          <h2>See Gallery</h2>
-          <p>See our establishment.</p>
+          <h2>Gallery</h2>
+          <p>Documentation Photos</p>
           <a href="../customer/gallery.html">Click here</a><br>
         </div>
         
         <div class="col">
           <img src="../img/42446.png">
-          <h2>See Calendar</h2>
-          <p>View our calendar.</p>
-          <a href="../customer/calendar.html">Click here</a><br>
+          <h2>Book Now!</h2>
+          <p>Bookings.</p>
+          <a href="../customer/booknow.php">Click here</a><br>
         </div>
         
       </div>
