@@ -25,7 +25,7 @@
             <div class="table-heading">
                 <h3 class="table-title">Customers</h3>
                 <?php
-                    if($_SESSION['user_type'] == 'admin'){ 
+                    if($_SESSION['user_type'] == 'admin'){
                 ?>
                     <a href="addcustomer.php" class="button">Add New Record</a>
                 <?php
@@ -67,13 +67,14 @@
                             <td><?php echo $value['username'] ?></td>
                             <td><?php echo $value['email'] ?></td>
                             <td><?php echo $value['type'] ?></td>
+
                             <?php
                                 if($_SESSION['user_type'] == 'admin'){ 
                             ?>
                                 <td>
                                     <div class="action">
-                                    <a class="action-edit" href="#">Edit</a>
-                                    <a class="action-delete" href="#">Delete</a>
+                                        <a class="action-edit" href="#">Edit</a>
+                                        <a class="action-delete" href="#">Delete</a>
                                     </div>
                                 </td>
                             <?php

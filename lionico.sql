@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 03:32 PM
+-- Generation Time: Dec 04, 2022 at 05:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -128,10 +128,10 @@ INSERT INTO `useraccounts` (`user_id`, `firstname`, `lastname`, `type`, `usernam
 (3, 'Robin', 'Almorfi', 'customer', 'robin', 'robin', 'robin@lionico.ph'),
 (4, 'Christian', 'awit', 'customer', 'jp', 'jp', 'waromarvin06@lionico.ph'),
 (5, 'hannah', 'waro', 'customer', 'erza', 'erza', 'hana@lionico.ph'),
-(6, 'jaydee', 'ballaho', '', 'jaydee', 'jaydee', 'jaydee@lionico.ph'),
 (8, 'jes', 'amarante', 'Customer', 'je', 'je', 'jes@lionico.ph'),
 (9, 'pudge', 'invoker', 'customer', 'pudge', 'pudge', 'pudge@lionico.ph'),
-(10, 'riki', 'maru', 'customer', 'riki', 'riki', 'waromarvin06@lionico.ph');
+(10, 'riki', 'maru', 'customer', 'riki', 'riki', 'waromarvin06@lionico.ph'),
+(11, 'hannah', 'amarante', 'customer', 'root', 'root', 'waromarvin06@lionico.ph');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +188,7 @@ ALTER TABLE `programs`
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

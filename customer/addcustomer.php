@@ -94,10 +94,6 @@
                             <input type="radio" name="type" id="customer" value="customer" <?php if(isset($_POST['type'])) { if ($_POST['type'] == 'customer') echo ' checked'; } ?>>
                             <span class="checkmark"></span>
                         </label>
-                        <label class="container" for="barber">Barber
-                            <input type="radio" name="type" id="barber" value="barber" <?php if(isset($_POST['type'])) { if ($_POST['type'] == 'barber') echo ' checked'; } ?>>
-                            <span class="checkmark"></span>
-                        </label>
                     </div>
 
                     <input type="submit" class="button" value="Save Record" name="save" id="save">

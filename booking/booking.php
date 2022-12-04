@@ -76,8 +76,8 @@
                             ?>
                                 <td>
                                     <div class="action">
-                                    <a class="action-edit" href="editbooking.php?id=<?php echo $value['id'] ?>">Edit</a>
-                                    <a class="action-delete" href="deletebooking.php?id=<?php echo $value['id'] ?>">Delete</a>
+                                        <a class="action-edit" href="editbooking.php?id=<?php echo $value['id'] ?>">Edit</a>
+                                        <a class="action-delete" href="deletebooking.php?id=<?php echo $value['id'] ?>">Delete</a>
                                     </div>
                                 </td>
                             <?php

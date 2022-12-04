@@ -23,7 +23,7 @@
             </a>
         </li>
         <li>
-        <a href="../login/customer.php" class="<?php echo $customer; ?>">
+        <a href="../customer/customer.php" class="<?php echo $customer; ?>">
                 <i class='bx bx-group' ></i>
                 <span class="links-name">Manage Customer</span>
             </a>
