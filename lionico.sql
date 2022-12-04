@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 07:28 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Dec 04, 2022 at 03:32 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,7 @@ CREATE TABLE `booking` (
 --
 
 INSERT INTO `booking` (`id`, `firstname`, `lastname`, `email`, `contact_number`, `address`, `date`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'gago', 'gaga', 'gaga@lionico.ph', '926133742', 'qwqw', '2022-11-30', 'Active', '2022-11-29 13:40:00', '2022-11-29 13:40:00');
+(3, 'Marvin', 'Waro', 'waromarvin06@lionico.ph', '0999999999', 'Pasonanca', '2022-12-28', 'Active Employee', '2022-12-04 02:25:42', '2022-12-04 02:25:42');
 
 -- --------------------------------------------------------
 
@@ -71,8 +71,7 @@ CREATE TABLE `mbarber` (
 --
 
 INSERT INTO `mbarber` (`id`, `firstname`, `lastname`, `email`, `contact_number`, `address`, `chair_assigned`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'dfdf', 'sdsd', 'sdsd@lionico.ph', '09265554489', 'marineford', 'chair 2', 'Active Employee', '2022-11-30 18:17:25', '2022-11-30 18:17:25'),
-(2, 'dfdf', 'sdsd', 'sdsd@lionico.ph', '787878', 'punk hazard', '9', 'Active Employee', '2022-11-30 18:26:05', '2022-11-30 18:26:05');
+(1, 'Robin', 'Almorfi', 'robin@lionico.ph', '2222222222', 'tetuan', '', 'Active Employee', '2022-11-30 18:17:25', '2022-12-04 02:26:45');
 
 -- --------------------------------------------------------
 
@@ -103,6 +102,8 @@ INSERT INTO `programs` (`id`, `code`, `description`, `years`, `level`, `cet`, `s
 (14, 'ACT', 'Associate in Computer Technology', 2, 'Associate', 55, 'Offering', '2022-11-13 13:26:06', '2022-11-13 23:06:10'),
 (15, 'ACS', 'Associate in Computer Science', 2, 'Associate', 55, 'Phase-Out', '2022-11-13 14:20:18', '2022-11-13 23:06:13');
 
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `useraccounts`
 --
@@ -113,17 +114,24 @@ CREATE TABLE `useraccounts` (
   `lastname` varchar(255) NOT NULL,
   `type` varchar(20) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `useraccounts`
 --
 
-INSERT INTO `useraccounts` (`user_id`, `firstname`, `lastname`, `type`, `username`, `password`) VALUES
-(1, 'Admin', '1', 'admin', 'admin', 'admin'),
-(2, 'Marvin', 'Waro', 'customer', 'marvin', 'marvin'),
-(3, 'Robin', 'Almorfi', 'customer', 'robin', 'robin');
+INSERT INTO `useraccounts` (`user_id`, `firstname`, `lastname`, `type`, `username`, `password`, `email`) VALUES
+(1, 'Admin', '1', 'admin', 'admin', 'admin', 'admin@lionico.ph'),
+(2, 'Marvin', 'Waro', 'customer', 'marvin', 'marvin', 'marvin@lionico.ph'),
+(3, 'Robin', 'Almorfi', 'customer', 'robin', 'robin', 'robin@lionico.ph'),
+(4, 'Christian', 'awit', 'customer', 'jp', 'jp', 'waromarvin06@lionico.ph'),
+(5, 'hannah', 'waro', 'customer', 'erza', 'erza', 'hana@lionico.ph'),
+(6, 'jaydee', 'ballaho', '', 'jaydee', 'jaydee', 'jaydee@lionico.ph'),
+(8, 'jes', 'amarante', 'Customer', 'je', 'je', 'jes@lionico.ph'),
+(9, 'pudge', 'invoker', 'customer', 'pudge', 'pudge', 'pudge@lionico.ph'),
+(10, 'riki', 'maru', 'customer', 'riki', 'riki', 'waromarvin06@lionico.ph');
 
 --
 -- Indexes for dumped tables
@@ -154,7 +162,6 @@ ALTER TABLE `programs`
 ALTER TABLE `useraccounts`
   ADD PRIMARY KEY (`user_id`);
 
-
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -163,7 +170,7 @@ ALTER TABLE `useraccounts`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `mbarber`
@@ -176,13 +183,12 @@ ALTER TABLE `mbarber`
 --
 ALTER TABLE `programs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-COMMIT;
 
 --
 -- AUTO_INCREMENT for table `useraccounts`
 --
 ALTER TABLE `useraccounts`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
