@@ -638,3 +638,8 @@ a.back {
     position: relative;
     cursor: pointer;
 }
+
+.back-to-login {
+    text-decoration: none;
+    color: brown;
+}

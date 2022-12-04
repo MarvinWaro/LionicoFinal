@@ -74,7 +74,7 @@
                 </label>
             </div>
             <input class="button" type="submit" value="Sign up" name="sign-up" tabindex="3">
-            <a href="login.php">Back to Login page</a>
+            <a class="back-to-login" href="login.php">Back to Login page</a>
 
         </form>
     </div>
