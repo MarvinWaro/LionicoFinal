@@ -374,3 +374,19 @@ h2 {
     color: white;
     font-size: 20px;
 }
+
+.admin-name {
+    background: transparent;
+    border: 2px solid #efeef1;
+    border-radius: 6px;
+    height: 20px;
+    min-width: 12px;
+    padding: 10px;
+    padding-bottom: 25px;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+    margin-left: 5px;
+}

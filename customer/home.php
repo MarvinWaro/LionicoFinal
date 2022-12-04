@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/customer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <title>Lionico | Home</title>
 </head>
 <body>
@@ -31,6 +32,7 @@
                 <li><a href="../customer/booknow.php">Book Now</a></li>
                 <li><a href="../customer/about.php">About</a></li>
                 <li><a href="../login/logout.php">Logout</a></li>
+                <span class="admin-name"><?php echo $_SESSION['fullname']; ?></span>
             </ul>
         </nav>
     </div>
