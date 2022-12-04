@@ -630,3 +630,11 @@ a.back {
     padding-right: 8px;
     margin-left: 2.3rem
 }
+
+.fa {
+    float: left;
+    top: -257px;
+    left: 750px;
+    position: relative;
+    cursor: pointer;
+}

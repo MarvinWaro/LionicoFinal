@@ -104,6 +104,28 @@ INSERT INTO `programs` (`id`, `code`, `description`, `years`, `level`, `cet`, `s
 (15, 'ACS', 'Associate in Computer Science', 2, 'Associate', 55, 'Phase-Out', '2022-11-13 14:20:18', '2022-11-13 23:06:13');
 
 --
+-- Table structure for table `useraccounts`
+--
+
+CREATE TABLE `useraccounts` (
+  `user_id` int(11) NOT NULL,
+  `firstname` varchar(255) NOT NULL,
+  `lastname` varchar(255) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `useraccounts` (`user_id`, `firstname`, `lastname`, `type`, `username`, `password`) VALUES
+(1, 'Admin', '1', 'admin', 'admin', 'admin'),
+(2, 'Marvin', 'Waro', 'customer', 'marvin', 'marvin'),
+(3, 'Robin', 'Almorfi', 'customer', 'robin', 'robin');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -127,6 +149,13 @@ ALTER TABLE `programs`
   ADD UNIQUE KEY `program_code` (`code`);
 
 --
+-- Indexes for table `useraccounts`
+--
+ALTER TABLE `useraccounts`
+  ADD PRIMARY KEY (`user_id`);
+
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -147,6 +176,13 @@ ALTER TABLE `mbarber`
 --
 ALTER TABLE `programs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+COMMIT;
+
+--
+-- AUTO_INCREMENT for table `useraccounts`
+--
+ALTER TABLE `useraccounts`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
