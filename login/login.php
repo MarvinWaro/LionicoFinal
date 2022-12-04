@@ -5,18 +5,18 @@
     //we start session since we need to use session values
     session_start();
     //creating an array for list of users can login to the system
-    $conn=mysqli_connect("localhost","root","","lionico");  
-     $error="";  
-    if (isset($_POST['login'])) {  
-      //echo "<pre>";  
-      //print_r($_POST);  
-      $username=mysqli_real_escape_string($conn,$_POST['username']);  
-      $password=mysqli_real_escape_string($conn,$_POST['password']);  
-      $sql=mysqli_query($conn,"select * from useraccounts where username='$username' && password='$password'");  
-      $num=mysqli_num_rows($sql);  
-      if ($num>0) {  
-            //echo "found";  
-            $row=mysqli_fetch_assoc($sql);  
+    $conn=mysqli_connect("localhost","root","","lionico");
+     $error="";
+    if (isset($_POST['login'])) {
+      //echo "<pre>";
+      //print_r($_POST);
+      $username=mysqli_real_escape_string($conn,$_POST['username']);
+      $password=mysqli_real_escape_string($conn,$_POST['password']);
+      $sql=mysqli_query($conn,"select * from useraccounts where username='$username' && password='$password'");
+      $num=mysqli_num_rows($sql);
+      if ($num>0) {
+            //echo "found";
+            $row=mysqli_fetch_assoc($sql);
             $_SESSION['logged-in'] = $username;
             $_SESSION['fullname']=$row['firstname'] . ' ' . $row['lastname'];
             $_SESSION['user_type'] = $row['type'];
@@ -47,13 +47,13 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter password" required tabindex="2">
             <input class="button" type="submit" value="Login" name="login" tabindex="3">
-            <a class="create" href="#">Create an Account</a>
+            <a class="create" href="create.php">Create an Account</a>
             <?php
                 //Display the error message if there is any.
                 if(isset($error)){
                     echo '<div><p class="error">'.$error.'</p></div>';
                 }
-                
+
             ?>
         </form>
     </div>

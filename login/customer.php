@@ -13,8 +13,8 @@
     //if the above code is false then html below will be displayed
 
     require_once '../tools/variables.php';
-    $page_title = 'Lionico | Show Booking';
-    $booking = 'active';
+    $page_title = 'Lionico | Show Customer';
+    $customer = 'active';
 
     require_once '../includes/header.php';
     require_once '../includes/sidebar.php';
@@ -23,11 +23,11 @@
     <div class="home-content">
         <div class="table-container">
             <div class="table-heading">
-                <h3 class="table-title">Bookings</h3>
+                <h3 class="table-title">Customers</h3>
                 <?php
                     if($_SESSION['user_type'] == 'admin'){ 
                 ?>
-                    <a href="addbooking.php" class="button">Add New Record</a>
+                    <a href="addcustomer.php" class="button">Add New Record</a>
                 <?php
                     }
                 ?>
@@ -37,11 +37,9 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th>Username</th>
                         <th>Email</th>
-                        <th>Contact Number</th>
-                        <th>Address</th>
-                        <th>Date</th>
-                        <th>Status</th>
+                        <th>Type</th>
                         <?php
                             if($_SESSION['user_type'] == 'admin'){ 
                         ?>
@@ -53,31 +51,29 @@
                 </thead>
                 <tbody>
                     <?php
-                        require_once '../classes/booking.class.php';
+                        require_once '../classes/customer.class.php';
 
-                        $booking = new Booking();
+                        $customer = new Customer();
                         //We will now fetch all the records in the array using loop
                         //use as a counter, not required but suggested for the table
                         $i = 1;
                         //loop for each record found in the array
-                        foreach ($booking->show() as $value){ //start of loop
+                        foreach ($customer->show() as $value){ //start of loop
                     ?>
                         <tr>
                             <!-- always use echo to output PHP values -->
                             <td><?php echo $i ?></td>
                             <td><?php echo $value['lastname'] . ', ' . $value['firstname'] ?></td>
+                            <td><?php echo $value['username'] ?></td>
                             <td><?php echo $value['email'] ?></td>
-                            <td><?php echo $value['contact_number'] ?></td>
-                            <td><?php echo $value['address'] ?></td>
-                            <td><?php echo $value['date'] ?></td>
-                            <td><?php echo $value['status'] ?></td>
+                            <td><?php echo $value['type'] ?></td>
                             <?php
                                 if($_SESSION['user_type'] == 'admin'){ 
                             ?>
                                 <td>
                                     <div class="action">
-                                    <a class="action-edit" href="editbooking.php?id=<?php echo $value['id'] ?>">Edit</a>
-                                    <a class="action-delete" href="deletebooking.php?id=<?php echo $value['id'] ?>">Delete</a>
+                                    <a class="action-edit" href="#">Edit</a>
+                                    <a class="action-delete" href="#">Delete</a>
                                     </div>
                                 </td>
                             <?php

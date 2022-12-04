@@ -18,8 +18,14 @@
         </li>
         <li>
         <a href="../mbarber/mbarber.php" class="<?php echo $mbarber; ?>">
-                <i class='bx bx-book-reader'></i>
+                <i class='bx bx-user'></i>
                 <span class="links-name">Manage Barber</span>
+            </a>
+        </li>
+        <li>
+        <a href="../login/customer.php" class="<?php echo $customer; ?>">
+                <i class='bx bx-group' ></i>
+                <span class="links-name">Manage Customer</span>
             </a>
         </li>
         <li>

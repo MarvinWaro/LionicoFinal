@@ -8,4 +8,6 @@
     $booking = "";
     $mbarber = "";
     $cbooking = "";
+    $create = "";
+    $customer = "";
 ?>
