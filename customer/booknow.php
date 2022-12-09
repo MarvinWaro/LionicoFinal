@@ -26,9 +26,6 @@
         $booking->contact_number = $_POST['contact_number'];
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
-        if(isset($_POST['status'])){
-            $booking->status = $_POST['status'];
-        }
         if(isset($_POST)){
             if($booking->add()){
                 //redirect user to booking page after saving
@@ -118,14 +115,9 @@
                     <label for="date">Date</label>
                     <br>
 
-                    <input type="date" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
+                    <input type="datetime-local" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
                     <br>
 
-                    <label for="status">Is Status of Customer Active?</label><br>
-                    <label class="container" for="status">Yes
-                        <input type="checkbox" name="status" id="status" value="Active Employee" <?php if(isset($_POST['status'])) { if ($_POST['status'] == 'Active Employee') echo ' checked'; } ?>>
-                    </label>
-                    <br>
                     <input type="submit" class="button" value="Save Record" name="save" id="save">
                 </form>
             </div>

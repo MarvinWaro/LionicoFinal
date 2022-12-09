@@ -22,8 +22,8 @@ class Booking{
 
     //Methods
     function add(){
-        $sql = "INSERT INTO booking (firstname, lastname, email, contact_number, address, date, status) VALUES
-        (:firstname, :lastname, :email, :contact_number, :address, :date, :status);";
+        $sql = "INSERT INTO booking (firstname, lastname, email, contact_number, address, date, services) VALUES
+        (:firstname, :lastname, :email, :contact_number, :address, :date, :services);";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
@@ -32,8 +32,8 @@ class Booking{
         $query->bindParam(':contact_number', $this->contact_number);
         $query->bindParam(':address', $this->address);
         $query->bindParam(':date', $this->date);
-        $query->bindParam(':status', $this->status);
-        
+        $query->bindParam(':services', $this->services);
+
         if($query->execute()){
             return true;
         }
@@ -43,7 +43,7 @@ class Booking{
     }
 
     function edit(){
-        $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, date=:date, status=:status WHERE id = :id;";
+        $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, date=:date, services=:services WHERE id = :id;";
 
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':firstname', $this->firstname);
@@ -52,7 +52,7 @@ class Booking{
         $query->bindParam(':contact_number', $this->contact_number);
         $query->bindParam(':address', $this->address);
         $query->bindParam(':date', $this->date);
-        $query->bindParam(':status', $this->status);
+        $query->bindParam(':services', $this->services);
         $query->bindParam(':id', $this->id);
 
         if($query->execute()){

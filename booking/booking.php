@@ -41,7 +41,7 @@
                         <th>Contact Number</th>
                         <th>Address</th>
                         <th>Date</th>
-                        <th>Status</th>
+                        <th>Services</th>
                         <?php
                             if($_SESSION['user_type'] == 'admin'){ 
                         ?>
@@ -70,7 +70,7 @@
                             <td><?php echo $value['contact_number'] ?></td>
                             <td><?php echo $value['address'] ?></td>
                             <td><?php echo $value['date'] ?></td>
-                            <td><?php echo $value['status'] ?></td>
+                            <td><?php echo $value['services'] ?></td>
                             <?php
                                 if($_SESSION['user_type'] == 'admin'){ 
                             ?>

@@ -26,9 +26,7 @@
         $booking->contact_number = $_POST['contact_number'];
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
-        if(isset($_POST['status'])){
-            $booking->status = $_POST['status'];
-        }
+        $booking->services = $_POST['services'];
         if(isset($_POST)){
             if($booking->add()){
                 //redirect user to booking page after saving
@@ -90,14 +88,18 @@
                     <br>
 
                     <label for="date">Date</label>
-                    <input type="date" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
+                    <input type="datetime-local" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
                     <br>
 
-                    <label for="status">Is Status of Customer Active?</label><br>
-                    <label class="container" for="status">Yes
-                        <input type="checkbox" name="status" id="status" value="Active Employee" <?php if(isset($_POST['status'])) { if ($_POST['status'] == 'Active Employee') echo ' checked'; } ?>>
-                        <span class="checkbox"></span>
-                    </label>
+                    <label for="services">Services</label>
+                    <select name="services" id="services">
+                        <option value="None" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                        <option value="haircut" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'haircut') echo ' selected="selected"'; } ?>>Haircut</option>
+                        <option value="shaving" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'shaving') echo ' selected="selected"'; } ?>>Shaving</option>
+                        <option value="massage" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'massage') echo ' selected="selected"'; } ?>>Massage</option>
+                    </select>
+                    <br>
+
                     <input type="submit" class="button" value="Save Record" name="save" id="save">
                 </form>
             </div>
