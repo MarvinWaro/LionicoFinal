@@ -25,11 +25,11 @@
         $booking->contact_number = $_POST['contact_number'];
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
-        $booking->services = $data['services'];
+        $booking->services = $_POST['services'];
         $booking->cbarber = $_POST['cbarber'];
 
         if(validate_add_booking($_POST)){
-            if($booking->edit()){
+            if($booking->edit_book()){
                 //redirect user to booking page after saving
                 header('location: booking.php');
             }
@@ -44,7 +44,7 @@
             $booking->address = $data['address'];
             $booking->date = $data['date'];
             $booking->services = $data['services'];
-            $booking->cbarber = $_POST['cbarber'];
+            $booking->cbarber = $data['cbarber'];
         }
     }
 
@@ -55,6 +55,9 @@
     require_once '../includes/header.php';
     require_once '../includes/sidebar.php';
     require_once '../includes/topnav.php';
+
+    $con = mysqli_connect("localhost", "root", "", "lionico");
+    $s =  mysqli_query($con, "SELECT * FROM mbarber");
 
 ?>
     <div class="home-content">
@@ -112,6 +115,22 @@
                             <option value="shaving" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'shaving') echo ' selected="selected"'; } ?>>Shaving</option>
                             <option value="massage" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'massage') echo ' selected="selected"'; } ?>>Massage</option>
                         </select>
+                        <br>
+
+                        <label for="cbarber">Barber</label><br>
+                        <select name="cbarber" id="cbarber">
+                            <option value="None" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                            <?php
+                                while($r = mysqli_fetch_array($s)){
+                            ?>
+                            <option value="<?php echo $r['firstname'];?>" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == $r['firstname']) echo ' selected="selected"'; } ?>><?php echo $r['firstname'];?> </option>
+                            <?php
+                                }
+                            ?>
+                        </select>
+
+
+
                         <br>
 
                         <input type="submit" class="button" value="Save Record" name="save" id="save">
