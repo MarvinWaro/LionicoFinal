@@ -100,7 +100,7 @@
                         <br>
 
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
+                        <input type="datetime-local" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
                         <br>
 
                         <label for="services">Services</label>

@@ -11,7 +11,7 @@ class Booking{
     public $contact_number;
     public $address;
     public $date;
-    public $status = 'Inactive';
+    public $services;
 
     protected $db;
 
@@ -33,16 +33,15 @@ class Booking{
         $query->bindParam(':address', $this->address);
         $query->bindParam(':date', $this->date);
         $query->bindParam(':services', $this->services);
-
         if($query->execute()){
             return true;
         }
         else{
             return false;
-        }	
+        }
     }
 
-    function edit(){
+    function edit_book(){
         $sql = "UPDATE booking SET firstname=:firstname, lastname=:lastname, email=:email, contact_number=:contact_number, address=:address, date=:date, services=:services WHERE id = :id;";
 
         $query=$this->db->connect()->prepare($sql);
@@ -67,6 +66,16 @@ class Booking{
         $sql = "SELECT * FROM booking WHERE id = :id;";
         $query=$this->db->connect()->prepare($sql);
         $query->bindParam(':id', $record_id);
+        if($query->execute()){
+            $data = $query->fetch();
+        }
+        return $data;
+    }
+
+    function fetchname($record_name){
+        $sql = "SELECT * FROM booking WHERE id = :id;";
+        $query=$this->db->connect()->prepare($sql);
+        $query->bindParam(':id', $record_name);
         if($query->execute()){
             $data = $query->fetch();
         }

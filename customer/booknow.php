@@ -26,7 +26,10 @@
         $booking->contact_number = $_POST['contact_number'];
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
-        if(isset($_POST)){
+        $booking->services = $_POST['services'];
+        $booking->cbarber = $_POST['cbarber'];
+
+        if(validate_add_booking($_POST)){
             if($booking->add()){
                 //redirect user to booking page after saving
                 header('location: home.php');
@@ -39,6 +42,10 @@
     $booking = 'active';
 
     require_once '../includes/cheader.php';
+
+    $con = mysqli_connect("localhost", "root", "", "lionico");
+    $s =  mysqli_query($con, "SELECT * FROM mbarber");
+
 
 ?>
     <div class="home-content">
@@ -114,8 +121,29 @@
 
                     <label for="date">Date</label>
                     <br>
-
                     <input type="datetime-local" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
+                    <br>
+
+                    <label for="services">Services</label><br>
+                    <select name="services" id="services">
+                        <option value="None" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                        <option value="haircut" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'haircut') echo ' selected="selected"'; } ?>>Haircut</option>
+                        <option value="shaving" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'shaving') echo ' selected="selected"'; } ?>>Shaving</option>
+                        <option value="massage" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'massage') echo ' selected="selected"'; } ?>>Massage</option>
+                    </select>
+                    <br>
+
+                    <label for="cbarber">Barber</label><br>
+                    <select name="cbarber" id="cbarber">
+                        <option value="None" <?php if(isset($_POST['barber'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                        <?php
+                            while($r = mysqli_fetch_array($s)){
+                        ?>
+                        <option><?php echo $r['firstname'];?> </option>
+                        <?php
+                            }
+                        ?>
+                    </select>
                     <br>
 
                     <input type="submit" class="button" value="Save Record" name="save" id="save">

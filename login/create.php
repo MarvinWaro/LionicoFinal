@@ -63,7 +63,7 @@
                 ?>
 
             <div>
-                <label for="type">Classification</label><br>
+                <label for="type">User</label><br>
                 <label class="container" for="customer">Customer
                     <input type="radio" name="type" id="customer" value="customer" <?php if(isset($_POST['type'])) { if ($_POST['type'] == 'customer') echo ' checked'; } ?>>
                     <span class="checkmark"></span>

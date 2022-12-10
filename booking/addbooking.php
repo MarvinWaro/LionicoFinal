@@ -27,6 +27,8 @@
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
         $booking->services = $_POST['services'];
+        $booking->cbarber = $_POST['cbarber'];
+
         if(isset($_POST)){
             if($booking->add()){
                 //redirect user to booking page after saving
@@ -42,6 +44,9 @@
     require_once '../includes/header.php';
     require_once '../includes/sidebar.php';
     require_once '../includes/topnav.php';
+
+    $con = mysqli_connect("localhost", "root", "", "lionico");
+    $s =  mysqli_query($con, "SELECT * FROM mbarber");
 
 ?>
     <div class="home-content">
@@ -97,6 +102,19 @@
                         <option value="haircut" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'haircut') echo ' selected="selected"'; } ?>>Haircut</option>
                         <option value="shaving" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'shaving') echo ' selected="selected"'; } ?>>Shaving</option>
                         <option value="massage" <?php if(isset($_POST['services'])) { if ($_POST['services'] == 'massage') echo ' selected="selected"'; } ?>>Massage</option>
+                    </select>
+                    <br>
+
+                    <label for="cbarber">Barber</label><br>
+                    <select name="cbarber" id="cbarber">
+                        <option value="None" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                        <?php
+                            while($r = mysqli_fetch_array($s)){
+                        ?>
+                        <option><?php echo $r['firstname'];?> </option>
+                        <?php
+                            }
+                        ?>
                     </select>
                     <br>
 
