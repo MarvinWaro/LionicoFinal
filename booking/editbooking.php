@@ -26,6 +26,7 @@
         $booking->address = $_POST['address'];
         $booking->date = $_POST['date'];
         $booking->services = $data['services'];
+        $booking->cbarber = $_POST['cbarber'];
 
         if(validate_add_booking($_POST)){
             if($booking->edit()){
@@ -43,6 +44,7 @@
             $booking->address = $data['address'];
             $booking->date = $data['date'];
             $booking->services = $data['services'];
+            $booking->cbarber = $_POST['cbarber'];
         }
     }
 

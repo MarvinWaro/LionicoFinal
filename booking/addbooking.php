@@ -111,7 +111,7 @@
                         <?php
                             while($r = mysqli_fetch_array($s)){
                         ?>
-                        <option><?php echo $r['firstname'];?> </option>
+                        <option value="<?php echo $r['firstname'];?>" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == $r['firstname']) echo ' selected="selected"'; } ?>><?php echo $r['firstname'];?> </option>
                         <?php
                             }
                         ?>

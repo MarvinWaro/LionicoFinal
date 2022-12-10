@@ -19,6 +19,9 @@
     require_once '../includes/header.php';
     require_once '../includes/sidebar.php';
     require_once '../includes/topnav.php';
+
+
+
 ?>
     <div class="home-content">
         <div class="table-container">
@@ -42,6 +45,7 @@
                         <th>Address</th>
                         <th>Date</th>
                         <th>Services</th>
+                        <th>Cbarber</th>
                         <?php
                             if($_SESSION['user_type'] == 'admin'){ 
                         ?>
@@ -71,6 +75,7 @@
                             <td><?php echo $value['address'] ?></td>
                             <td><?php echo $value['date'] ?></td>
                             <td><?php echo $value['services'] ?></td>
+                            <td><?php echo $value['cbarber'] ?></td>
                             <?php
                                 if($_SESSION['user_type'] == 'admin'){ 
                             ?>

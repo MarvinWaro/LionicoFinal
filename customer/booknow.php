@@ -29,7 +29,7 @@
         $booking->services = $_POST['services'];
         $booking->cbarber = $_POST['cbarber'];
 
-        if(validate_add_booking($_POST)){
+        if(isset($_POST)){
             if($booking->add()){
                 //redirect user to booking page after saving
                 header('location: home.php');
@@ -135,11 +135,11 @@
 
                     <label for="cbarber">Barber</label><br>
                     <select name="cbarber" id="cbarber">
-                        <option value="None" <?php if(isset($_POST['barber'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
+                        <option value="None" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == 'None') echo ' selected="selected"'; } ?>>--Select--</option>
                         <?php
                             while($r = mysqli_fetch_array($s)){
                         ?>
-                        <option><?php echo $r['firstname'];?> </option>
+                        <option value="<?php echo $r['firstname'];?>" <?php if(isset($_POST['cbarber'])) { if ($_POST['services'] == $r['firstname']) echo ' selected="selected"'; } ?>><?php echo $r['firstname'];?> </option>
                         <?php
                             }
                         ?>
