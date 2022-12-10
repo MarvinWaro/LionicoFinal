@@ -19,6 +19,10 @@
     require_once '../includes/header.php';
     require_once '../includes/sidebar.php';
     require_once '../includes/topnav.php';
+
+    $con = mysqli_connect("localhost", "root", "", "lionico");
+    $d =  mysqli_query($con, "SELECT * FROM useraccounts");
+
 ?>
 
     <div class="home-content">
@@ -26,7 +30,13 @@
             <div class="box">
                 <div class="right-side">
                     <div class="box-topic">Total Customer</div>
-                    <div class="number">5</div>
+                    <div class="number">
+                    <?php
+                        while($dr = mysqli_fetch_array($d)){
+                            echo $dr['user_id'];
+                        }
+                    ?>
+                    </div>
                     <div class="indicator">
 
                         <span class="text">As of <?php echo ' ' . date("m-d-Y h:i:s A"); ?></span>
