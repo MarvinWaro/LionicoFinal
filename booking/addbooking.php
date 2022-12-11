@@ -93,8 +93,15 @@
                     <br>
 
                     <label for="date">Date</label>
-                    <input type="datetime-local" id="date" name="date" required value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
+                    <input type="datetime-local" id="date" name="date" required min="2022-12-11" value="<?php if(isset($_POST['date'])) { echo $_POST['date']; } ?>">
                     <br>
+                    <?php
+                        if(isset($_POST['save']) && !SetMinDate($_POST)){
+                    ?>
+                                <p class="error">Time has pass</p>
+                    <?php
+                        }
+                    ?>
 
                     <label for="services">Services</label>
                     <select name="services" id="services">

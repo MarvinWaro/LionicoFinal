@@ -141,4 +141,15 @@ function validate_add_program($POST){
     return true;
 }
 
+function SetMinDate() {
+    $now = new Date();
+
+    $day = ("0" + $now.getDate()).slice(-2);
+    $month = ("0" + ($now.getMonth() + 1)).slice(-2);
+
+    $today = $now.getFullYear() + "-" + ($month) + "-" + ($day);
+
+    ('#ExpiryDate').val($today);
+    ('#ExpiryDate').attr('min', $today); }
+
 ?>
