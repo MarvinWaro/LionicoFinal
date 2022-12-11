@@ -369,11 +369,13 @@ select {
     border-radius: 6px;
     box-sizing: border-box;
     border: 1px solid black;
+    width: 25%;
 }
 
 h2 {
     color: white;
     font-size: 20px;
+    padding-bottom: 1.6rem
 }
 
 .admin-name {
