@@ -39,7 +39,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Contact_Number</th>
-                        <th>Address</th>
+                        <th>Barangay</th>
                         <th>Status</th>
                         <?php
                             if($_SESSION['user_type'] == 'admin'){

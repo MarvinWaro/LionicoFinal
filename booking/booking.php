@@ -42,7 +42,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Contact Number</th>
-                        <th>Address</th>
+                        <th>Barangay</th>
                         <th>Date</th>
                         <th>Services</th>
                         <th>Cbarber</th>

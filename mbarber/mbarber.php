@@ -39,7 +39,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Contact Number</th>
-                        <th>Address</th>
+                        <th>Barangay</th>
                         <th>Chair Assigned</th>
                         <th>Status</th>
                         <?php

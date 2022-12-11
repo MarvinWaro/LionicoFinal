@@ -100,7 +100,7 @@
                         <input type="text" id="contact_number" name="contact_number" required placeholder="contact_number" value="<?php if(isset($_POST['contact_number'])) { echo $_POST['contact_number']; } ?>">
                         <br>
 
-                        <label for="address">Address</label>
+                        <label for="address">Barangay</label>
                         <input type="text" id="address" name="address" required placeholder="address" value="<?php if(isset($_POST['address'])) { echo $_POST['address']; } ?>">
                         <br>
 
